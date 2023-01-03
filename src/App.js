@@ -1,24 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import "./index.css";
+import { FaBars, FaTwitter } from "react-icons/fa";
+import logo from "./logo.svg";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <nav>
+      <div className="nav-center">
+        <div className="nav-header">
+          <img src={logo} alt="logo" />
+          <button className="nav-toggle">
+            <FaBars />
+          </button>
+        </div>
+        <div className="links-container show-container">
+          {/* we gonna use react router */}
+          <ul className="links">
+            <li>
+              <a href="1">home</a>
+            </li>
+            <li>
+              <a href="2">about</a>
+            </li>
+            <li>
+              <a href="3">contact</a>
+            </li>
+            <li>
+              <a href="4">products</a>
+            </li>
+          </ul>
+        </div>
+        <ul className="social-icons">
+          <li>
+            <a href="http://twitter.com">
+              <FaTwitter />
+            </a>
+          </li>
+          <li>
+            <a href="http://twitter.com">
+              <FaTwitter />
+            </a>
+          </li>
+          <li>
+            <a href="http://twitter.com">
+              <FaTwitter />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
   );
 }
 
