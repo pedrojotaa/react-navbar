@@ -12,10 +12,10 @@ function App() {
 
   useEffect(() => {
     /* is the height of the links */
-    const linkHeight = linksRef.current.height
+    const linkHeight = linksRef.current.getBoundingClientRect().height
     console.log(linkHeight)
     if (showLinks) {
-      linksContainerRef.current.style.height = `${linkHeight}`;
+      linksContainerRef.current.style.height = `${linkHeight}px`;
     } else {
       linksContainerRef.current.style.height = `0px`;
     }
@@ -33,7 +33,7 @@ function App() {
             <FaBars />
           </button>
         </div>
-        <div className="links-container" ref>
+        <div className="links-container" ref={linksContainerRef}>
           {/* let's use react router */}
           <ul className="links" ref={linksRef}>
             {links.map((link) => {
